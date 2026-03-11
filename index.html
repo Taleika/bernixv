@@ -31,8 +31,8 @@
       --bg-cream: #F2E1D8;
       --bg-soft: #F7EFEA;
       --turquoise: #17A8A6;
-      --coral: #D8897D;
-      --coral-hover: #C7776B;
+      --coral: #F26C63;
+      --coral-hover: #E55A52;
       --mustard: #F2C078;
       --leaf: #3F8F8C;
       --text: #3D3D3D;
@@ -74,6 +74,14 @@
       background-size: cover;
       background-position: center;
       padding: 0;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(242,225,216,0.35);
+      z-index: 1;
+      pointer-events: none;
     }
     @media (min-width: 769px) {
       header {
@@ -175,6 +183,17 @@
       animation: pulse 1.8s ease-in-out infinite;
       display: block;
     }
+    img[src="images/icono-fiesta.svg"],
+    img[src="images/icono-instagram.svg"],
+    img[src="images/icono-regalo.svg"] {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(604%) hue-rotate(136deg) brightness(95%) contrast(90%);
+    }
+    img[src="images/icono-canciones.svg"] {
+      filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(722%) hue-rotate(333deg) brightness(98%) contrast(93%);
+    }
+    img[src="images/icono-dresscode.svg"] {
+      filter: brightness(0) saturate(100%) invert(49%) sepia(38%) saturate(1299%) hue-rotate(134deg) brightness(84%) contrast(87%);
+    }
     @keyframes pulse {
       0%,100%{ transform: scale(1); }
       50%{ transform: scale(1.15); }
@@ -225,7 +244,7 @@
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 8px 20px rgba(216, 137, 125, 0.35);
+      box-shadow: 0 8px 20px rgba(242, 108, 99, 0.35);
       transition: all 0.3s;
     }
     .btn:hover { background: var(--coral-hover); }
