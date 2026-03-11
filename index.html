@@ -186,7 +186,7 @@
 
     /* Countdown */
     .countdown-section {
-      background: #17a8a6;
+      background: var(--turquoise);
       padding: 82px 20px;
     }
 
@@ -365,6 +365,17 @@
       background-size: cover;
       background-position: center;
       background-repeat: repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 36px;
+    }
+
+    #instagram .section-title {
+      font-size: 1.9em;
+      margin-bottom: 10px;
     }
 
     #instagram .icon {
@@ -409,6 +420,7 @@
       .countdown span { font-size: 16px; padding: 10px; min-width: 55px; }
       .icon { width: 108px; }
       header img.logo { width: 240px; }
+      #instagram .section-title { font-size: 1.6em; }
       section { padding: 72px 20px; }
     }
   </style>
@@ -630,29 +642,30 @@
   });
 
   // Parallax estable (mobile + desktop)
-  const parallaxElems = document.querySelectorAll('.parallax');
+const parallaxElems = document.querySelectorAll('.parallax');
 
-  function handleParallax() {
-    parallaxElems.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const speed = el.id === "instagram" ? 0.1 : 0.2;
+function handleParallax() {
+  parallaxElems.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const speed = el.id === "instagram" ? 0.1 : 0.2;
 
-      const viewportCenter = window.innerHeight / 2;
-      const elementCenter = rect.top + rect.height / 2;
-      const distance = elementCenter - viewportCenter;
+    const viewportCenter = window.innerHeight / 2;
+    const elementCenter = rect.top + rect.height / 2;
+    const distance = elementCenter - viewportCenter;
 
-      const yPos = distance * speed;
+    const yPos = distance * speed;
 
-      el.style.backgroundPosition = `center ${-yPos}px`;
-    });
+    el.style.backgroundPosition = `center ${-yPos}px`;
+  });
 
-    const hero = document.querySelector('header');
-    const logo = document.getElementById('hero-logo');
-    logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
-  }
+  const hero = document.querySelector('header');
+  const logo = document.getElementById('hero-logo');
+  logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
+}
 
-  window.addEventListener('scroll', handleParallax);
-  window.addEventListener('resize', handleParallax);
+window.addEventListener('scroll', handleParallax);
+window.addEventListener('resize', handleParallax);
+
 
   // Música control play/pausa
   const music = document.getElementById("bg-music");
