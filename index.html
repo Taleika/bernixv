@@ -165,29 +165,33 @@
     }
 
     .boho-divider {
-      text-align: center;
-      margin: 0;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 260px;
+      margin: 10px 0;
       opacity: 0.9;
-      padding: 14px 0;
-      background: linear-gradient(90deg, transparent, rgba(242, 192, 120, 0.22), transparent);
+      filter: drop-shadow(0 6px 8px rgba(0,0,0,0.08));
     }
 
-    .boho-divider img {
-      width: 170px;
-      max-width: 44vw;
-      opacity: 0.92;
-      display: inline-block;
+    .boho-divider:nth-of-type(4n+1) {
+      background-image: url("images/divider1.svg");
     }
 
-    .soft-section {
-      background: var(--bg-soft) !important;
+    .boho-divider:nth-of-type(4n+2) {
+      background-image: url("images/divider2.svg");
     }
 
-    .accent-section {
-      background: var(--coral) !important;
-      color: #fff;
+    .boho-divider:nth-of-type(4n+3) {
+      background-image: url("images/divider3.svg");
     }
 
+    .boho-divider:nth-of-type(4n+4) {
+      background-image: url("images/divider4.svg");
+    }
 
     /* Countdown */
     .countdown-section {
@@ -351,6 +355,7 @@
     #instagram p {
       color: #fff;
     }
+
     /* Instagram */
     #instagram {
       min-height: 320px;
@@ -399,14 +404,14 @@
   <img src="images/logo.png" alt="Nombre Quinceañera" class="logo" id="hero-logo">
 </header>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Nueva sección con frase -->
 <section class="soft-section">
   <h2 class="section-title" style="font-family:'Great Vibes', cursive; font-size:3.2em; color:#17A8A6;">Te espero para festejar este gran momento de mi vida</h2>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Countdown -->
 <section class="countdown-section">
@@ -419,7 +424,7 @@
   </div>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Fiesta -->
 <section>
@@ -431,7 +436,7 @@
   <a href="https://maps.app.goo.gl/Uo2ic5Mbo77kMxRw9" target="_blank" class="btn">Cómo llegar</a>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Galería 1 -->
 <section>
@@ -443,7 +448,7 @@
   </div>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Confirmación -->
 <section class="accent-section">
@@ -452,7 +457,7 @@
   <a href="https://forms.gle/KoJ2D5vWjPkszsXc7" target="_blank" class="btn">Confirmar asistencia</a>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Dress Code -->
 <section class="green-section">
@@ -461,7 +466,7 @@
   <p>Elegante colorido</p>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Instagram -->
 <section id="instagram" class="parallax" style="background-image:url('images/imagenig.jpg');">
@@ -471,7 +476,7 @@
   Seguime en mi cuenta de Instagram y etiquetame en tus fotos y videos.</p>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Música -->
 <section class="accent-section">
@@ -481,7 +486,7 @@
   <a href="https://forms.gle/sW15xdnH8HkVxya78" target="_blank" class="btn">Sugerir Canción</a>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Galería 2 -->
 <section>
@@ -493,7 +498,7 @@
   </div>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Regalos -->
 <section class="green-section">
@@ -504,7 +509,7 @@
   <strong>CBU:</strong> 0140329703709253872727</p>
 </section>
 
-<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+<div class="boho-divider"></div>
 
 <!-- Gracias -->
 <section class="accent-section">
