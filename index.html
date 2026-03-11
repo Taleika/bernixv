@@ -25,7 +25,7 @@
 🫶">
   <meta name="twitter:image" content="https://taleika.github.io/bernixv/images/miniatura.jpg">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-cream: #F2E1D8;
@@ -45,22 +45,40 @@
       color: var(--text);
       text-align: center;
       overflow-x: hidden;
+      background-image: radial-gradient(circle at 20% 10%, rgba(242, 192, 120, 0.12) 0%, transparent 36%), radial-gradient(circle at 80% 20%, rgba(23, 168, 166, 0.1) 0%, transparent 34%);
     }
 
-    h2,h3 {
-      font-family: 'Cormorant Garamond', serif;
-      margin: 15px 0;
+    h2,
+    h3,
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      margin: 20px 0;
       line-height: 1.2;
       color: var(--turquoise);
       letter-spacing: 0.02em;
     }
-    h2 { font-size: 3em; }
-    h3 { font-size: 2.2em; }
+
+    .section-title::after {
+      content: "✦ ✦ ✦";
+      display: block;
+      margin-top: 12px;
+      color: var(--mustard);
+      font-size: 18px;
+      letter-spacing: 0.18em;
+    }
+
+    h2 {
+      font-size: 3.2em;
+    }
+
+    h3 {
+      font-size: 2.3em;
+    }
 
     p {
-      font-size: 1em;
-      line-height: 1.6;
-      max-width: 700px;
+      font-size: 1.02em;
+      line-height: 1.75;
+      max-width: 760px;
       margin: 0 auto 20px auto;
     }
 
@@ -69,12 +87,13 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      min-height: 500px;
+      min-height: 560px;
       overflow: hidden;
       background-size: cover;
       background-position: center;
       padding: 0;
     }
+
     header::after {
       content: "";
       position: absolute;
@@ -83,21 +102,22 @@
       z-index: 1;
       pointer-events: none;
     }
+
     @media (min-width: 769px) {
       header {
         height: 100vh;
         aspect-ratio: auto;
-        padding: 100px 20px;
+        padding: 120px 20px;
       }
     }
 
     header img.logo {
       position: absolute;
-      bottom: 20px;
+      bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      width: 390px;
-      max-width: 80%;
+      width: 420px;
+      max-width: 84%;
       z-index: 2;
       transition: opacity 0.5s;
     }
@@ -108,9 +128,10 @@
       background-repeat: no-repeat;
       background-position: center;
       color: var(--text);
-      padding: 100px 20px;
+      padding: 110px 20px;
       overflow: hidden;
     }
+
     header.parallax {
       padding: 0;
       box-sizing: border-box;
@@ -118,7 +139,8 @@
     }
 
     section {
-      padding: 75px 20px;
+      position: relative;
+      padding: 80px 20px;
       background: var(--bg-cream);
     }
 
@@ -135,39 +157,74 @@
       color: #fff;
     }
 
+    .accent-section h2,
+    .accent-section p,
+    .countdown-section h2,
+    .countdown-section p {
+      color: #fff;
+    }
+
+    .boho-divider {
+      text-align: center;
+      margin: 0;
+      opacity: 0.9;
+      padding: 14px 0;
+      background: linear-gradient(90deg, transparent, rgba(242, 192, 120, 0.22), transparent);
+    }
+
+    .boho-divider img {
+      width: 170px;
+      max-width: 44vw;
+      opacity: 0.92;
+      display: inline-block;
+    }
+
+    .soft-section {
+      background: var(--bg-soft) !important;
+    }
+
+    .accent-section {
+      background: var(--coral) !important;
+      color: #fff;
+    }
+
 
     /* Countdown */
     .countdown-section {
       background: var(--coral);
-      padding: 70px 20px;
+      padding: 82px 20px;
     }
+
     .countdown-title {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      font-size: 3.3em;
+      margin-bottom: 26px;
       color: #fff;
     }
+
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
     }
+
     .countdown span {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.4);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
       padding: 15px 20px;
-      border-radius: 12px;
+      border-radius: 14px;
       font-size: 20px;
       font-weight: bold;
       color: #fff;
-      min-width: 70px;
+      min-width: 74px;
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: all 0.3s;
     }
+
     .countdown small {
       font-size: 12px;
       margin-top: 5px;
@@ -182,60 +239,64 @@
       animation: pulse 1.8s ease-in-out infinite;
       display: block;
     }
+
     @keyframes pulse {
-      0%,100%{ transform: scale(1); }
-      50%{ transform: scale(1.15); }
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
-/* Galería */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
+    /* Galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-/* Celular */
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(61, 61, 61, 0.22);
-}
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(61, 61, 61, 0.22);
+    }
 
-    /* Botones coral */
+    /* Botones coral orgánicos */
     .btn {
       display: inline-block;
       margin-top: 20px;
-      padding: 12px 25px;
+      padding: 13px 28px;
       background: var(--coral);
       color: #fff;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 8px 20px rgba(216, 137, 125, 0.35);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 8px 20px rgba(242, 108, 99, 0.35);
       transition: all 0.3s;
     }
-    .btn:hover { background: var(--coral-hover); }
+
+    .btn:hover {
+      background: var(--coral-hover);
+      transform: translateY(-2px);
+    }
 
     /* Modal */
     .modal {
@@ -247,6 +308,7 @@
       background: rgba(0,0,0,0.95);
       z-index: 1000;
     }
+
     .modal img {
       max-width: 90%;
       max-height: 90%;
@@ -282,21 +344,16 @@
       background: var(--leaf);
       color: #fff;
     }
-    .green-section h2 {
-      color: #fff;
-    }
-    .green-section p,
-    .accent-section p,
-    .accent-section h2 {
-      color: #fff;
-    }
 
-    #instagram h2 {
+    .green-section h2,
+    .green-section p,
+    #instagram h2,
+    #instagram p {
       color: #fff;
     }
     /* Instagram */
     #instagram {
-      height: 300px;
+      min-height: 320px;
       background-size: cover;
       background-position: center;
       background-repeat: repeat;
@@ -314,17 +371,20 @@
       animation: pulse 1.8s ease-in-out infinite;
       transition: opacity 0.3s;
     }
+
     #music-btn.playing {
       opacity: 0.95;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      h2 { font-size: 2em; }
-      h3 { font-size: 1.7em; }
+      h2 { font-size: 2.4em; }
+      h3 { font-size: 1.9em; }
+      .countdown-title { font-size: 2.6em; }
       .countdown span { font-size: 16px; padding: 10px; min-width: 55px; }
       .icon { width: 108px; }
       header img.logo { width: 300px; }
+      section { padding: 72px 20px; }
     }
   </style>
 </head>
@@ -339,10 +399,14 @@
   <img src="images/logo.png" alt="Nombre Quinceañera" class="logo" id="hero-logo">
 </header>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Nueva sección con frase -->
 <section class="soft-section">
-  <h2 style="font-size:1.9em; font-family:'Great Vibes', cursive; color:#17A8A6;">Te espero para festejar este gran momento de mi vida</h2>
+  <h2 class="section-title" style="font-family:'Great Vibes', cursive; font-size:3.2em; color:#17A8A6;">Te espero para festejar este gran momento de mi vida</h2>
 </section>
+
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
 
 <!-- Countdown -->
 <section class="countdown-section">
@@ -355,15 +419,19 @@
   </div>
 </section>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Fiesta -->
 <section>
   <img src="images/icono-fiesta.svg" alt="Fiesta" class="icon">
-  <h2>Fiesta</h2>
+  <h2 class="section-title">Fiesta</h2>
   <p><strong>11 de Abril</strong><br>
   20:00 hs<br>
   La Rural</p>
   <a href="https://maps.app.goo.gl/Uo2ic5Mbo77kMxRw9" target="_blank" class="btn">Cómo llegar</a>
 </section>
+
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
 
 <!-- Galería 1 -->
 <section>
@@ -375,35 +443,45 @@
   </div>
 </section>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Confirmación -->
 <section class="accent-section">
-  <h2>Confirmación de Asistencia</h2>
+  <h2 class="section-title">Confirmación de Asistencia</h2>
   <p>Confirmar asistencia antes del 4/04</p>
   <a href="https://forms.gle/KoJ2D5vWjPkszsXc7" target="_blank" class="btn">Confirmar asistencia</a>
 </section>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Dress Code -->
 <section class="green-section">
   <img src="images/icono-dresscode.svg" alt="Dress Code" class="icon">
-  <h2>Dress Code</h2>
+  <h2 class="section-title">Dress Code</h2>
   <p>Elegante colorido</p>
 </section>
+
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
 
 <!-- Instagram -->
 <section id="instagram" class="parallax" style="background-image:url('images/imagenig.jpg');">
   <img src="images/icono-instagram.svg" alt="Instagram" class="icon">
-  <h2><a href="https://www.instagram.com/_bernacastro/" target="_blank" style="color:inherit; text-decoration:none;">@_bernacastro</a></h2>
+  <h2 class="section-title"><a href="https://www.instagram.com/_bernacastro/" target="_blank" style="color:inherit; text-decoration:none;">@_bernacastro</a></h2>
   <p>¡Preparate para esta gran fiesta!<br>
   Seguime en mi cuenta de Instagram y etiquetame en tus fotos y videos.</p>
 </section>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Música -->
 <section class="accent-section">
   <img src="images/icono-canciones.svg" alt="Canciones" class="icon">
-  <h2>¡Ayudame a elegir la música!</h2>
+  <h2 class="section-title">¡Ayudame a elegir la música!</h2>
   <p>Podés sugerir tus canciones favoritas para la fiesta.</p>
   <a href="https://forms.gle/sW15xdnH8HkVxya78" target="_blank" class="btn">Sugerir Canción</a>
 </section>
+
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
 
 <!-- Galería 2 -->
 <section>
@@ -415,19 +493,22 @@
   </div>
 </section>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Regalos -->
 <section class="green-section">
   <img src="images/icono-regalo.svg" alt="Regalos" class="icon">
-  <h2>Regalos</h2>
-  <p>¡Tu presencia es el regalo más importante!<br>
-  Pero si deseas hacerme un obsequio en el salón encontrarás un buzón donde dejar tu sobre o podrás depositar en la siguiente cuenta:</p>
+  <h2 class="section-title">Regalos</h2>
+  <p>¡Tu presencia es el regalo más importante!</p>
   <p><strong>Alias:</strong> Berni.castro2011<br>
   <strong>CBU:</strong> 0140329703709253872727</p>
 </section>
 
+<div class="boho-divider"><img src="images/divider.svg" alt="Separador boho"></div>
+
 <!-- Gracias -->
 <section class="accent-section">
-  <h2>Gracias por acompañarme</h2>
+  <h2 class="section-title" style="font-family:'Great Vibes', cursive; font-size:3em;">Gracias por acompañarme</h2>
 </section>
 
 <!-- Modal Lightbox -->
