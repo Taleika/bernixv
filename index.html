@@ -10,7 +10,7 @@
 
   <!-- Open Graph para WhatsApp / Facebook -->
   <meta property="og:title" content="Te invito a Mis Quince Años!">
-  <meta property="og:description" content="Acompáñame a celebrar mis XV en una noche inolvidable🫶">
+  <meta property="og:description" content="Una noche que empieza elegante... y termina épica.">
   <meta property="og:image" content="https://taleika.github.io/bernixv/images/miniatura.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
@@ -21,8 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Te invito a Mis Quince Años!">
-  <meta name="twitter:description" content="Acompáñame a celebrar mis XV en una noche inolvidable!
-🫶">
+  <meta name="twitter:description" content="Una noche que empieza elegante... y termina épica.">
   <meta name="twitter:image" content="https://taleika.github.io/bernixv/images/miniatura.jpg">
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,6 +35,7 @@
       --mustard: #F2C078;
       --leaf: #17A8A6;
       --text: #3D3D3D;
+      --turquoise-dark: #0F6F75;
     }
 
     body {
@@ -293,6 +293,15 @@
       transform: translateY(-2px);
     }
 
+    .btn-turquoise {
+      background: var(--turquoise);
+      box-shadow: 0 8px 20px rgba(23, 168, 166, 0.35);
+    }
+
+    .btn-turquoise:hover {
+      background: var(--turquoise-dark);
+    }
+
     /* Modal */
     .modal {
       position: fixed;
@@ -337,11 +346,14 @@
     /* Secciones verdes */
     .green-section {
       background: var(--leaf);
-      color: #fff;
+      color: var(--turquoise-dark);
     }
 
     .green-section h2,
-    .green-section p,
+    .green-section p {
+      color: var(--turquoise-dark);
+    }
+
     #instagram h2,
     #instagram p {
       color: #fff;
@@ -376,6 +388,19 @@
       opacity: 0.95;
     }
 
+    .video-section {
+      background: var(--bg-soft);
+      padding: 60px 20px;
+    }
+
+    .video-section video {
+      width: min(920px, 100%);
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+      display: block;
+      margin: 0 auto;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       h2 { font-size: 2.4em; }
@@ -403,7 +428,7 @@
 
 <!-- Nueva sección con frase -->
 <section class="soft-section">
-  <h2 class="section-title" style="font-family:'Great Vibes', cursive; font-size:3.2em; color:#17A8A6;">Te espero para festejar este gran momento de mi vida</h2>
+  <h2 class="section-title" style="font-family:'Great Vibes', cursive; font-size:3.2em; color:#17A8A6;">Una noche que empieza elegante... y termina épica.</h2>
 </section>
 
 <div class="boho-divider"></div>
@@ -449,7 +474,7 @@
 <section class="accent-section">
   <h2 class="section-title">Confirmación de Asistencia</h2>
   <p>Confirmar asistencia antes del 04/04/26</p>
-  <a href="https://forms.gle/QrWM6jVe63yhNtYB7" target="_blank" class="btn">Confirmar asistencia</a>
+  <a href="https://forms.gle/QrWM6jVe63yhNtYB7" target="_blank" class="btn btn-turquoise">Confirmar asistencia</a>
 </section>
 
 <div class="boho-divider"></div>
@@ -478,7 +503,7 @@
   <img src="images/icono-canciones.svg" alt="Canciones" class="icon">
   <h2 class="section-title">¡Ayudame a elegir la música!</h2>
   <p>Podés sugerir tus canciones favoritas para la fiesta.</p>
-  <a href="https://forms.gle/BevwZtFFzXrqUyqV8" target="_blank" class="btn">Sugerir Canción</a>
+  <a href="https://forms.gle/BevwZtFFzXrqUyqV8" target="_blank" class="btn btn-turquoise">Sugerir Canción</a>
 </section>
 
 <div class="boho-divider"></div>
@@ -505,6 +530,11 @@
 </section>
 
 <div class="boho-divider"></div>
+
+<!-- Video Loop -->
+<section class="video-section">
+  <video src="images/loop.mp4" autoplay loop muted playsinline preload="auto" aria-label="Video loop de la invitación"></video>
+</section>
 
 <!-- Gracias -->
 <section class="accent-section">
@@ -600,30 +630,29 @@
   });
 
   // Parallax estable (mobile + desktop)
-const parallaxElems = document.querySelectorAll('.parallax');
+  const parallaxElems = document.querySelectorAll('.parallax');
 
-function handleParallax() {
-  parallaxElems.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    const speed = el.id === "instagram" ? 0.1 : 0.2;
+  function handleParallax() {
+    parallaxElems.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const speed = el.id === "instagram" ? 0.1 : 0.2;
 
-    const viewportCenter = window.innerHeight / 2;
-    const elementCenter = rect.top + rect.height / 2;
-    const distance = elementCenter - viewportCenter;
+      const viewportCenter = window.innerHeight / 2;
+      const elementCenter = rect.top + rect.height / 2;
+      const distance = elementCenter - viewportCenter;
 
-    const yPos = distance * speed;
+      const yPos = distance * speed;
 
-    el.style.backgroundPosition = `center ${-yPos}px`;
-  });
+      el.style.backgroundPosition = `center ${-yPos}px`;
+    });
 
-  const hero = document.querySelector('header');
-  const logo = document.getElementById('hero-logo');
-  logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
-}
+    const hero = document.querySelector('header');
+    const logo = document.getElementById('hero-logo');
+    logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
+  }
 
-window.addEventListener('scroll', handleParallax);
-window.addEventListener('resize', handleParallax);
-
+  window.addEventListener('scroll', handleParallax);
+  window.addEventListener('resize', handleParallax);
 
   // Música control play/pausa
   const music = document.getElementById("bg-music");
