@@ -31,8 +31,8 @@
       --bg-cream: #F2E1D8;
       --bg-soft: #F7EFEA;
       --turquoise: #17A8A6;
-      --coral: #D8897D;
-      --coral-hover: #C7776B;
+      --coral: #F26C63;
+      --coral-hover: #E55A52;
       --mustard: #F2C078;
       --leaf: #3F8F8C;
       --text: #3D3D3D;
@@ -74,6 +74,14 @@
       background-size: cover;
       background-position: center;
       padding: 0;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(242,225,216,0.35);
+      z-index: 1;
+      pointer-events: none;
     }
     @media (min-width: 769px) {
       header {
