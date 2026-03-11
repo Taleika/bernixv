@@ -10,7 +10,7 @@
 
   <!-- Open Graph para WhatsApp / Facebook -->
   <meta property="og:title" content="Te invito a Mis Quince Años!">
-  <meta property="og:description" content="Acompáñame a celebrar mis XV en una noche inolvidable🫶">
+  <meta property="og:description" content="Te espero para festejar este gran momento de mi vida">
   <meta property="og:image" content="https://taleika.github.io/bernixv/images/miniatura.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
@@ -21,8 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Te invito a Mis Quince Años!">
-  <meta name="twitter:description" content="Acompáñame a celebrar mis XV en una noche inolvidable!
-🫶">
+  <meta name="twitter:description" content="Te espero para festejar este gran momento de mi vida">
   <meta name="twitter:image" content="https://taleika.github.io/bernixv/images/miniatura.jpg">
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +33,7 @@
       --coral: #F26C63;
       --coral-hover: #E55A52;
       --mustard: #F2C078;
-      --leaf: #39A0A9;
+      --leaf: #17A8A6;
       --text: #3D3D3D;
     }
 
@@ -156,7 +155,7 @@
     }
 
     .boho-divider {
-      height: 144px;
+      height: 101px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -186,7 +185,7 @@
 
     /* Countdown */
     .countdown-section {
-      background: #39a0a9;
+      background: #17a8a6;
       padding: 82px 20px;
     }
 
@@ -428,7 +427,7 @@
   <p><strong>11 de Abril</strong><br>
   20:00 hs<br>
   La Rural</p>
-  <a href="https://maps.app.goo.gl/Uo2ic5Mbo77kMxRw9" target="_blank" class="btn">Cómo llegar</a>
+  <a href="https://maps.app.goo.gl/pWHyW9x2PDT9ZNZb6" target="_blank" class="btn">Cómo llegar</a>
 </section>
 
 <div class="boho-divider"></div>
@@ -448,8 +447,8 @@
 <!-- Confirmación -->
 <section class="accent-section">
   <h2 class="section-title">Confirmación de Asistencia</h2>
-  <p>Confirmar asistencia antes del 4/04</p>
-  <a href="https://forms.gle/KoJ2D5vWjPkszsXc7" target="_blank" class="btn">Confirmar asistencia</a>
+  <p>Confirmar asistencia antes del 04/04/26</p>
+  <a href="https://forms.gle/QrWM6jVe63yhNtYB7" target="_blank" class="btn">Confirmar asistencia</a>
 </section>
 
 <div class="boho-divider"></div>
@@ -478,7 +477,7 @@
   <img src="images/icono-canciones.svg" alt="Canciones" class="icon">
   <h2 class="section-title">¡Ayudame a elegir la música!</h2>
   <p>Podés sugerir tus canciones favoritas para la fiesta.</p>
-  <a href="https://forms.gle/sW15xdnH8HkVxya78" target="_blank" class="btn">Sugerir Canción</a>
+  <a href="https://forms.gle/BevwZtFFzXrqUyqV8" target="_blank" class="btn">Sugerir Canción</a>
 </section>
 
 <div class="boho-divider"></div>
@@ -600,29 +599,30 @@
   });
 
   // Parallax estable (mobile + desktop)
-  const parallaxElems = document.querySelectorAll('.parallax');
+const parallaxElems = document.querySelectorAll('.parallax');
 
-  function handleParallax() {
-    parallaxElems.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const speed = el.id === "instagram" ? 0.1 : 0.2;
+function handleParallax() {
+  parallaxElems.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const speed = el.id === "instagram" ? 0.1 : 0.2;
 
-      const viewportCenter = window.innerHeight / 2;
-      const elementCenter = rect.top + rect.height / 2;
-      const distance = elementCenter - viewportCenter;
+    const viewportCenter = window.innerHeight / 2;
+    const elementCenter = rect.top + rect.height / 2;
+    const distance = elementCenter - viewportCenter;
 
-      const yPos = distance * speed;
+    const yPos = distance * speed;
 
-      el.style.backgroundPosition = `center ${-yPos}px`;
-    });
+    el.style.backgroundPosition = `center ${-yPos}px`;
+  });
 
-    const hero = document.querySelector('header');
-    const logo = document.getElementById('hero-logo');
-    logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
-  }
+  const hero = document.querySelector('header');
+  const logo = document.getElementById('hero-logo');
+  logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
+}
 
-  window.addEventListener('scroll', handleParallax);
-  window.addEventListener('resize', handleParallax);
+window.addEventListener('scroll', handleParallax);
+window.addEventListener('resize', handleParallax);
+
 
   // Música control play/pausa
   const music = document.getElementById("bg-music");
