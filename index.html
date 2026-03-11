@@ -34,7 +34,7 @@
       --coral: #F26C63;
       --coral-hover: #E55A52;
       --mustard: #F2C078;
-      --leaf: #3F8F8C;
+      --leaf: #39A0A9;
       --text: #3D3D3D;
     }
 
@@ -94,15 +94,6 @@
       padding: 0;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(242,225,216,0.35);
-      z-index: 1;
-      pointer-events: none;
-    }
-
     @media (min-width: 769px) {
       header {
         height: 100vh;
@@ -116,7 +107,7 @@
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      width: 420px;
+      width: 336px;
       max-width: 84%;
       z-index: 2;
       transition: opacity 0.5s;
@@ -165,13 +156,13 @@
     }
 
     .boho-divider {
-      height: 120px;
+      height: 144px;
       display: flex;
       align-items: center;
       justify-content: center;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 260px;
+      background-size: 312px;
       margin: 10px 0;
       opacity: 0.9;
       filter: drop-shadow(0 6px 8px rgba(0,0,0,0.08));
@@ -195,7 +186,7 @@
 
     /* Countdown */
     .countdown-section {
-      background: var(--coral);
+      background: #39a0a9;
       padding: 82px 20px;
     }
 
@@ -214,7 +205,7 @@
     }
 
     .countdown span {
-      background: rgba(255,255,255,0.15);
+      background: var(--coral);
       border: 1px solid rgba(255,255,255,0.4);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
       padding: 15px 20px;
@@ -364,6 +355,10 @@
       background-repeat: repeat;
     }
 
+    #instagram .icon {
+      display: none;
+    }
+
     /* Botón música esquina superior izquierda */
     #music-btn {
       position: fixed;
@@ -388,7 +383,7 @@
       .countdown-title { font-size: 2.6em; }
       .countdown span { font-size: 16px; padding: 10px; min-width: 55px; }
       .icon { width: 108px; }
-      header img.logo { width: 300px; }
+      header img.logo { width: 240px; }
       section { padding: 72px 20px; }
     }
   </style>
@@ -605,30 +600,29 @@
   });
 
   // Parallax estable (mobile + desktop)
-const parallaxElems = document.querySelectorAll('.parallax');
+  const parallaxElems = document.querySelectorAll('.parallax');
 
-function handleParallax() {
-  parallaxElems.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    const speed = el.id === "instagram" ? 0.1 : 0.2;
+  function handleParallax() {
+    parallaxElems.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const speed = el.id === "instagram" ? 0.1 : 0.2;
 
-    const viewportCenter = window.innerHeight / 2;
-    const elementCenter = rect.top + rect.height / 2;
-    const distance = elementCenter - viewportCenter;
+      const viewportCenter = window.innerHeight / 2;
+      const elementCenter = rect.top + rect.height / 2;
+      const distance = elementCenter - viewportCenter;
 
-    const yPos = distance * speed;
+      const yPos = distance * speed;
 
-    el.style.backgroundPosition = `center ${-yPos}px`;
-  });
+      el.style.backgroundPosition = `center ${-yPos}px`;
+    });
 
-  const hero = document.querySelector('header');
-  const logo = document.getElementById('hero-logo');
-  logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
-}
+    const hero = document.querySelector('header');
+    const logo = document.getElementById('hero-logo');
+    logo.style.opacity = window.scrollY > hero.offsetHeight ? 0 : 1;
+  }
 
-window.addEventListener('scroll', handleParallax);
-window.addEventListener('resize', handleParallax);
-
+  window.addEventListener('scroll', handleParallax);
+  window.addEventListener('resize', handleParallax);
 
   // Música control play/pausa
   const music = document.getElementById("bg-music");
